@@ -1,17 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj5g7le3rku0p"]
+[gd_scene load_steps=5 format=3 uid="uid://cj5g7le3rku0p"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_3k23x"]
+[ext_resource type="Script" path="res://window.gd" id="1_d1sf0"]
 [ext_resource type="PackedScene" uid="uid://cvb6tkiw3f0jq" path="res://chips/chip_red_marble_and_gold.tscn" id="1_mfo8l"]
 [ext_resource type="Script" path="res://chips/chip_red_marble_and_gold.gd" id="2_6ocs6"]
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_3k23x")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Window" type="Window" parent="."]
+transparent_bg = true
+initial_position = 4
+size = Vector2i(400, 400)
+borderless = true
+transparent = true
+script = ExtResource("1_d1sf0")
+
+[node name="Camera3D" type="Camera3D" parent="Window"]
+transform = Transform3D(1, 0, 0, 0, 0.0747873, 0.9972, 0, -0.9972, 0.0747873, 0, 0.695833, 0.0527934)
+projection = 1
+current = true
+
+[node name="chip_red_marble_and_gold" parent="Window" instance=ExtResource("1_mfo8l")]
+script = ExtResource("2_6ocs6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Window"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="chip_red_marble_and_gold" parent="." instance=ExtResource("1_mfo8l")]
-script = ExtResource("2_6ocs6")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0747873, 0.9972, 0, -0.9972, 0.0747873, 0, 0.728505, 0.070815)
-current = true
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 42.0
+offset_bottom = 31.0
+text = "Spin"

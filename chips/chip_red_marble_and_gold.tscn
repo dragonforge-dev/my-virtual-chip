@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvb6tkiw3f0jq"]
 
 [ext_resource type="PackedScene" uid="uid://dnpyl3s8wa8cd" path="res://models/chip_red_marble_and_gold.glb" id="1_k56x1"]
-[ext_resource type="Material" uid="uid://yt24mqunflmb" path="res://materials/red_and_black_marble.material" id="2_t0snp"]
+[ext_resource type="Material" uid="uid://cxkiua0y636x5" path="res://materials/red_and_black_marble.material" id="2_t0snp"]
 
 [node name="chip_red_marble_and_gold" instance=ExtResource("1_k56x1")]
 
